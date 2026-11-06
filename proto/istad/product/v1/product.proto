@@ -1,0 +1,50 @@
+// istad/product/v1/product.proto
+syntax = "proto3";
+package istad.product.v1;
+import "istad/common/v1/common.proto";
+option java_multiple_files = true;
+option java_package = "kh.edu.istad.common.grpc.product.v1";
+
+service ProductService {
+  rpc GetProduct       (GetProductRequest)       returns (Product);
+  rpc BatchGetProducts (BatchGetProductsRequest) returns (BatchGetProductsResponse);
+  rpc ReserveStock     (ReserveStockRequest)     returns (ReserveStockResponse);  // idempotent by order_id
+  rpc ReleaseStock     (ReleaseStockRequest)     returns (ReleaseStockResponse);  // compensation, idempotent
+}
+
+enum ProductStatus {
+  PRODUCT_STATUS_UNSPECIFIED = 0;
+  PRODUCT_STATUS_ACTIVE = 1;
+  PRODUCT_STATUS_INACTIVE = 2;
+  PRODUCT_STATUS_DISCONTINUED = 3;
+}
+
+message Product {
+  string id = 1;
+  string business_id = 2;
+  string sku = 3;
+  string name = 4;
+  string description = 5;
+  istad.common.v1.Money unit_price = 6;
+  int32 available_quantity = 7;
+  ProductStatus status = 8;
+}
+
+message GetProductRequest { string product_id = 1; }
+message BatchGetProductsRequest { repeated string product_ids = 1; }
+message BatchGetProductsResponse { repeated Product products = 1; }
+
+message StockItem { string product_id = 1; int32 quantity = 2; }
+
+message ReserveStockRequest {
+  string order_id = 1;            // idempotency key
+  string business_id = 2;
+  repeated StockItem items = 3;
+}
+message ReserveStockResponse {
+  string reservation_id = 1;
+  repeated Product reserved_products = 2;   // price snapshot at reservation time
+}
+
+message ReleaseStockRequest { string order_id = 1; string reason = 2; }
+message ReleaseStockResponse { bool released = 1; }
