@@ -1,7 +1,7 @@
 version: v2
 modules:
   - path: proto
-    name: buf.build/sophiram/istad-proto
+    name: buf.build/sophiram-istad/istad-proto
 lint:
   use:
     - STANDARD
