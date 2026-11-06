@@ -27,6 +27,11 @@ public final class ProductOuterClass extends com.google.protobuf.GeneratedFile {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_istad_product_v1_GetProductResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_istad_product_v1_GetProductResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_istad_product_v1_Product_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -82,101 +87,115 @@ public final class ProductOuterClass extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n\036istad/product/v1/product.proto\022\020istad." +
       "product.v1\032\034istad/common/v1/common.proto" +
-      "\"\241\002\n\007Product\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013business" +
-      "_id\030\002 \001(\tR\nbusinessId\022\020\n\003sku\030\003 \001(\tR\003sku\022" +
-      "\022\n\004name\030\004 \001(\tR\004name\022 \n\013description\030\005 \001(\t" +
-      "R\013description\0225\n\nunit_price\030\006 \001(\0132\026.ista" +
-      "d.common.v1.MoneyR\tunitPrice\022-\n\022availabl" +
-      "e_quantity\030\007 \001(\005R\021availableQuantity\0227\n\006s" +
-      "tatus\030\010 \001(\0162\037.istad.product.v1.ProductSt" +
-      "atusR\006status\"2\n\021GetProductRequest\022\035\n\npro" +
-      "duct_id\030\001 \001(\tR\tproductId\":\n\027BatchGetProd" +
-      "uctsRequest\022\037\n\013product_ids\030\001 \003(\tR\nproduc" +
-      "tIds\"Q\n\030BatchGetProductsResponse\0225\n\010prod" +
-      "ucts\030\001 \003(\0132\031.istad.product.v1.ProductR\010p" +
-      "roducts\"F\n\tStockItem\022\035\n\nproduct_id\030\001 \001(\t" +
-      "R\tproductId\022\032\n\010quantity\030\002 \001(\005R\010quantity\"" +
-      "\204\001\n\023ReserveStockRequest\022\031\n\010order_id\030\001 \001(" +
-      "\tR\007orderId\022\037\n\013business_id\030\002 \001(\tR\nbusines" +
-      "sId\0221\n\005items\030\003 \003(\0132\033.istad.product.v1.St" +
-      "ockItemR\005items\"\205\001\n\024ReserveStockResponse\022" +
-      "%\n\016reservation_id\030\001 \001(\tR\rreservationId\022F" +
-      "\n\021reserved_products\030\002 \003(\0132\031.istad.produc" +
-      "t.v1.ProductR\020reservedProducts\"H\n\023Releas" +
-      "eStockRequest\022\031\n\010order_id\030\001 \001(\tR\007orderId" +
-      "\022\026\n\006reason\030\002 \001(\tR\006reason\"2\n\024ReleaseStock" +
-      "Response\022\032\n\010released\030\001 \001(\010R\010released*\210\001\n" +
-      "\rProductStatus\022\036\n\032PRODUCT_STATUS_UNSPECI" +
-      "FIED\020\000\022\031\n\025PRODUCT_STATUS_ACTIVE\020\001\022\033\n\027PRO" +
-      "DUCT_STATUS_INACTIVE\020\002\022\037\n\033PRODUCT_STATUS" +
-      "_DISCONTINUED\020\0032\207\003\n\016ProductService\022L\n\nGe" +
-      "tProduct\022#.istad.product.v1.GetProductRe" +
-      "quest\032\031.istad.product.v1.Product\022i\n\020Batc" +
-      "hGetProducts\022).istad.product.v1.BatchGet" +
-      "ProductsRequest\032*.istad.product.v1.Batch" +
-      "GetProductsResponse\022]\n\014ReserveStock\022%.is" +
-      "tad.product.v1.ReserveStockRequest\032&.ist" +
-      "ad.product.v1.ReserveStockResponse\022]\n\014Re" +
-      "leaseStock\022%.istad.product.v1.ReleaseSto" +
-      "ckRequest\032&.istad.product.v1.ReleaseStoc" +
-      "kResponseB\'\n#kh.edu.istad.common.grpc.pr" +
-      "oduct.v1P\001b\006proto3"
+      "\"\254\002\n\022GetProductResponse\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\037\n\013business_id\030\002 \001(\tR\nbusinessId\022\020\n\003sku\030" +
+      "\003 \001(\tR\003sku\022\022\n\004name\030\004 \001(\tR\004name\022 \n\013descri" +
+      "ption\030\005 \001(\tR\013description\0225\n\nunit_price\030\006" +
+      " \001(\0132\026.istad.common.v1.MoneyR\tunitPrice\022" +
+      "-\n\022available_quantity\030\007 \001(\005R\021availableQu" +
+      "antity\0227\n\006status\030\010 \001(\0162\037.istad.product.v" +
+      "1.ProductStatusR\006status\"\241\002\n\007Product\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022\037\n\013business_id\030\002 \001(\tR\nbusine" +
+      "ssId\022\020\n\003sku\030\003 \001(\tR\003sku\022\022\n\004name\030\004 \001(\tR\004na" +
+      "me\022 \n\013description\030\005 \001(\tR\013description\0225\n\n" +
+      "unit_price\030\006 \001(\0132\026.istad.common.v1.Money" +
+      "R\tunitPrice\022-\n\022available_quantity\030\007 \001(\005R" +
+      "\021availableQuantity\0227\n\006status\030\010 \001(\0162\037.ist" +
+      "ad.product.v1.ProductStatusR\006status\"2\n\021G" +
+      "etProductRequest\022\035\n\nproduct_id\030\001 \001(\tR\tpr" +
+      "oductId\":\n\027BatchGetProductsRequest\022\037\n\013pr" +
+      "oduct_ids\030\001 \003(\tR\nproductIds\"Q\n\030BatchGetP" +
+      "roductsResponse\0225\n\010products\030\001 \003(\0132\031.ista" +
+      "d.product.v1.ProductR\010products\"F\n\tStockI" +
+      "tem\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022\032\n\010qu" +
+      "antity\030\002 \001(\005R\010quantity\"\204\001\n\023ReserveStockR" +
+      "equest\022\031\n\010order_id\030\001 \001(\tR\007orderId\022\037\n\013bus" +
+      "iness_id\030\002 \001(\tR\nbusinessId\0221\n\005items\030\003 \003(" +
+      "\0132\033.istad.product.v1.StockItemR\005items\"\205\001" +
+      "\n\024ReserveStockResponse\022%\n\016reservation_id" +
+      "\030\001 \001(\tR\rreservationId\022F\n\021reserved_produc" +
+      "ts\030\002 \003(\0132\031.istad.product.v1.ProductR\020res" +
+      "ervedProducts\"H\n\023ReleaseStockRequest\022\031\n\010" +
+      "order_id\030\001 \001(\tR\007orderId\022\026\n\006reason\030\002 \001(\tR" +
+      "\006reason\"2\n\024ReleaseStockResponse\022\032\n\010relea" +
+      "sed\030\001 \001(\010R\010released*\210\001\n\rProductStatus\022\036\n" +
+      "\032PRODUCT_STATUS_UNSPECIFIED\020\000\022\031\n\025PRODUCT" +
+      "_STATUS_ACTIVE\020\001\022\033\n\027PRODUCT_STATUS_INACT" +
+      "IVE\020\002\022\037\n\033PRODUCT_STATUS_DISCONTINUED\020\0032\222" +
+      "\003\n\016ProductService\022W\n\nGetProduct\022#.istad." +
+      "product.v1.GetProductRequest\032$.istad.pro" +
+      "duct.v1.GetProductResponse\022i\n\020BatchGetPr" +
+      "oducts\022).istad.product.v1.BatchGetProduc" +
+      "tsRequest\032*.istad.product.v1.BatchGetPro" +
+      "ductsResponse\022]\n\014ReserveStock\022%.istad.pr" +
+      "oduct.v1.ReserveStockRequest\032&.istad.pro" +
+      "duct.v1.ReserveStockResponse\022]\n\014ReleaseS" +
+      "tock\022%.istad.product.v1.ReleaseStockRequ" +
+      "est\032&.istad.product.v1.ReleaseStockRespo" +
+      "nseB\'\n#kh.edu.istad.common.grpc.product." +
+      "v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           kh.edu.istad.common.grpc.v1.Common.getDescriptor(),
         });
-    internal_static_istad_product_v1_Product_descriptor =
+    internal_static_istad_product_v1_GetProductResponse_descriptor =
       getDescriptor().getMessageType(0);
+    internal_static_istad_product_v1_GetProductResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_istad_product_v1_GetProductResponse_descriptor,
+        new java.lang.String[] { "Id", "BusinessId", "Sku", "Name", "Description", "UnitPrice", "AvailableQuantity", "Status", });
+    internal_static_istad_product_v1_Product_descriptor =
+      getDescriptor().getMessageType(1);
     internal_static_istad_product_v1_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_Product_descriptor,
         new java.lang.String[] { "Id", "BusinessId", "Sku", "Name", "Description", "UnitPrice", "AvailableQuantity", "Status", });
     internal_static_istad_product_v1_GetProductRequest_descriptor =
-      getDescriptor().getMessageType(1);
+      getDescriptor().getMessageType(2);
     internal_static_istad_product_v1_GetProductRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_GetProductRequest_descriptor,
         new java.lang.String[] { "ProductId", });
     internal_static_istad_product_v1_BatchGetProductsRequest_descriptor =
-      getDescriptor().getMessageType(2);
+      getDescriptor().getMessageType(3);
     internal_static_istad_product_v1_BatchGetProductsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_BatchGetProductsRequest_descriptor,
         new java.lang.String[] { "ProductIds", });
     internal_static_istad_product_v1_BatchGetProductsResponse_descriptor =
-      getDescriptor().getMessageType(3);
+      getDescriptor().getMessageType(4);
     internal_static_istad_product_v1_BatchGetProductsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_BatchGetProductsResponse_descriptor,
         new java.lang.String[] { "Products", });
     internal_static_istad_product_v1_StockItem_descriptor =
-      getDescriptor().getMessageType(4);
+      getDescriptor().getMessageType(5);
     internal_static_istad_product_v1_StockItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_StockItem_descriptor,
         new java.lang.String[] { "ProductId", "Quantity", });
     internal_static_istad_product_v1_ReserveStockRequest_descriptor =
-      getDescriptor().getMessageType(5);
+      getDescriptor().getMessageType(6);
     internal_static_istad_product_v1_ReserveStockRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_ReserveStockRequest_descriptor,
         new java.lang.String[] { "OrderId", "BusinessId", "Items", });
     internal_static_istad_product_v1_ReserveStockResponse_descriptor =
-      getDescriptor().getMessageType(6);
+      getDescriptor().getMessageType(7);
     internal_static_istad_product_v1_ReserveStockResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_ReserveStockResponse_descriptor,
         new java.lang.String[] { "ReservationId", "ReservedProducts", });
     internal_static_istad_product_v1_ReleaseStockRequest_descriptor =
-      getDescriptor().getMessageType(7);
+      getDescriptor().getMessageType(8);
     internal_static_istad_product_v1_ReleaseStockRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_ReleaseStockRequest_descriptor,
         new java.lang.String[] { "OrderId", "Reason", });
     internal_static_istad_product_v1_ReleaseStockResponse_descriptor =
-      getDescriptor().getMessageType(8);
+      getDescriptor().getMessageType(9);
     internal_static_istad_product_v1_ReleaseStockResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_istad_product_v1_ReleaseStockResponse_descriptor,

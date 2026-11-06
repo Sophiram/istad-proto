@@ -13,28 +13,28 @@ public final class ProductServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<kh.edu.istad.common.grpc.product.v1.GetProductRequest,
-      kh.edu.istad.common.grpc.product.v1.Product> getGetProductMethod;
+      kh.edu.istad.common.grpc.product.v1.GetProductResponse> getGetProductMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetProduct",
       requestType = kh.edu.istad.common.grpc.product.v1.GetProductRequest.class,
-      responseType = kh.edu.istad.common.grpc.product.v1.Product.class,
+      responseType = kh.edu.istad.common.grpc.product.v1.GetProductResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<kh.edu.istad.common.grpc.product.v1.GetProductRequest,
-      kh.edu.istad.common.grpc.product.v1.Product> getGetProductMethod() {
-    io.grpc.MethodDescriptor<kh.edu.istad.common.grpc.product.v1.GetProductRequest, kh.edu.istad.common.grpc.product.v1.Product> getGetProductMethod;
+      kh.edu.istad.common.grpc.product.v1.GetProductResponse> getGetProductMethod() {
+    io.grpc.MethodDescriptor<kh.edu.istad.common.grpc.product.v1.GetProductRequest, kh.edu.istad.common.grpc.product.v1.GetProductResponse> getGetProductMethod;
     if ((getGetProductMethod = ProductServiceGrpc.getGetProductMethod) == null) {
       synchronized (ProductServiceGrpc.class) {
         if ((getGetProductMethod = ProductServiceGrpc.getGetProductMethod) == null) {
           ProductServiceGrpc.getGetProductMethod = getGetProductMethod =
-              io.grpc.MethodDescriptor.<kh.edu.istad.common.grpc.product.v1.GetProductRequest, kh.edu.istad.common.grpc.product.v1.Product>newBuilder()
+              io.grpc.MethodDescriptor.<kh.edu.istad.common.grpc.product.v1.GetProductRequest, kh.edu.istad.common.grpc.product.v1.GetProductResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProduct"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   kh.edu.istad.common.grpc.product.v1.GetProductRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  kh.edu.istad.common.grpc.product.v1.Product.getDefaultInstance()))
+                  kh.edu.istad.common.grpc.product.v1.GetProductResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ProductServiceMethodDescriptorSupplier("GetProduct"))
               .build();
         }
@@ -202,7 +202,7 @@ public final class ProductServiceGrpc {
     /**
      */
     default void getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request,
-        io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.Product> responseObserver) {
+        io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.GetProductResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
     }
 
@@ -264,7 +264,7 @@ public final class ProductServiceGrpc {
     /**
      */
     public void getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request,
-        io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.Product> responseObserver) {
+        io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.GetProductResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request, responseObserver);
     }
@@ -318,7 +318,7 @@ public final class ProductServiceGrpc {
 
     /**
      */
-    public kh.edu.istad.common.grpc.product.v1.Product getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request) throws io.grpc.StatusException {
+    public kh.edu.istad.common.grpc.product.v1.GetProductResponse getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
@@ -369,7 +369,7 @@ public final class ProductServiceGrpc {
 
     /**
      */
-    public kh.edu.istad.common.grpc.product.v1.Product getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request) {
+    public kh.edu.istad.common.grpc.product.v1.GetProductResponse getProduct(kh.edu.istad.common.grpc.product.v1.GetProductRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
@@ -420,7 +420,7 @@ public final class ProductServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<kh.edu.istad.common.grpc.product.v1.Product> getProduct(
+    public com.google.common.util.concurrent.ListenableFuture<kh.edu.istad.common.grpc.product.v1.GetProductResponse> getProduct(
         kh.edu.istad.common.grpc.product.v1.GetProductRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request);
@@ -481,7 +481,7 @@ public final class ProductServiceGrpc {
       switch (methodId) {
         case METHODID_GET_PRODUCT:
           serviceImpl.getProduct((kh.edu.istad.common.grpc.product.v1.GetProductRequest) request,
-              (io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.Product>) responseObserver);
+              (io.grpc.stub.StreamObserver<kh.edu.istad.common.grpc.product.v1.GetProductResponse>) responseObserver);
           break;
         case METHODID_BATCH_GET_PRODUCTS:
           serviceImpl.batchGetProducts((kh.edu.istad.common.grpc.product.v1.BatchGetProductsRequest) request,
@@ -518,7 +518,7 @@ public final class ProductServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               kh.edu.istad.common.grpc.product.v1.GetProductRequest,
-              kh.edu.istad.common.grpc.product.v1.Product>(
+              kh.edu.istad.common.grpc.product.v1.GetProductResponse>(
                 service, METHODID_GET_PRODUCT)))
         .addMethod(
           getBatchGetProductsMethod(),
